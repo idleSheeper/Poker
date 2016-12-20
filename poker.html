@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Texas hold'em</title>
+   <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+   <link rel="stylesheet" type="text/css" href="cards-selfthinker/cards.css" media="screen" />
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="cards-selfthinker/cards-ie.css" media="screen" />
+    <![endif]-->
+    <!--[if IE 9]>
+        <link rel="stylesheet" type="text/css" href="cards-selfthinker/cards-ie9.css" media="screen" />
+    <![endif]-->
+    <!-- the following js and css is not part of the CSS cards, but only for this example page -->
+    
+<!--    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
+</head>
+
+
+<body>
+   <div id="contener" class="playingCards fourColours rotateHand faceImages">
+   
+        <div class="window" id="start" style="z-index: 10"> 
+                <h2>Welcome to our club poker!</h2>
+                <div>    
+                <p>Would you like to join?</p>    
+                </div>
+                <p><a href="javascript: void(0)" onclick="play()" >Play</a></p>
+       </div>
+
+       <div class="window" id="auction" style="z-index: -20">     
+                <h2>Your turn! what you want to do?</h2>   
+                <p><a href="javascript: void(0)" onclick="fold()" >Fold</a></p>
+                <p><a href="javascript: void(0)" onclick="call()" >Call</a></p>
+                <p><a href="javascript: void(0)" onclick="raise()" >Raise</a></p>
+                <p id="howmuch">You want raise to <span id="valBox"></span>?</p>
+                <form onchange="showVal()">
+                <input type="range" min="5" max="10" step="1" id="inVal">
+
+                </form>
+        </div>
+
+        <div class="window" id="wait" style="z-index: -20">     
+                <div id="info">Wait. Other players make decision.</div>   
+                 <p><a href="javascript: void(0)" id="Play!" onclick="next()" >Next</a></p>
+        </div>
+
+        <div class="window" id="winner" style="z-index: -20">     </div>
+
+        <div id="hand-1">
+                <div class="frame">
+                    <h4 class="name">Player 1</h4>
+                    <p id="cash-1" class="cash">$2000</p>
+                </div>
+                <ul id="player-1" class="table"></ul>
+                <p id="pot-1" class="coin"></p>
+        </div>
+
+        <div id="hand-2">
+                <div class="frame">
+                    <h4 class="name">Player 2</h4>
+                    <p id="cash-2" class="cash">$2000</p>
+                </div>
+                <ul id="player-2" class="table"></ul>
+                <p id="pot-2" class="coin"></p>
+        </div>
+
+        <div id="pots"></div>
+
+        <div id="table-cards">
+              <ul id="table" class="table"></ul>
+        </div>
+
+        <div id="hand-3">
+                <div class="frame">
+                    <h4 class="name">Player 3</h4>
+                    <p id="cash-3" class="cash">$2000</p>
+                </div>
+                <ul id="player-3" class="table"></ul>
+                <p id="pot-3" class="coin"></p>
+        </div>
+        
+        <div id="hand-you">
+                <div class="frame">
+                    <h4 class="name">You</h4>
+                    <p id="cash-you" class="cash">$2000</p>
+                </div>
+                <ul id="you" class="table"></ul>
+                <p id="pot-you" class="coin"></p>
+        </div>
+    </div>
+    
+    <footer><p> Created by: </p><p><a href="pan.d.borecki@o2.pl">Damian Borecki</a>.</p></footer>
+    
+    <script src="poker.js"></script>
+    <script src="players.js"></script>
+    <script src="auction.js"></script>
+    <script src="play.js"></script>
+</body>
+</html>
